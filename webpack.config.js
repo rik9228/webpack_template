@@ -4,6 +4,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const ImageminPlugin = require("imagemin-webpack-plugin").default;
+const ImageminMozjpeg = require("imagemin-mozjpeg");
 
 module.exports = {
   mode: isDevelopment ? "development" : "production",
@@ -35,6 +37,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
+        // background-imageバンドル化
         test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
         type: "asset/resource",
       },
@@ -42,13 +45,6 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "css/style.css" }),
-    new BrowserSyncPlugin({
-      host: "localhost",
-      port: 3000,
-      // proxy: "http://exmaple.local", // Local で使うと時にここをSite Domain に変更する
-      server: { baseDir: "dist" },
-      files: ["./dist/*.{html,css,js,jpg,png,webp,php}"],
-    }),
     new CopyPlugin({
       patterns: [
         {
@@ -57,6 +53,26 @@ module.exports = {
         },
       ],
     }),
+    //画像圧縮処理
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      plugins: [
+        ImageminMozjpeg({
+          quality: 89,
+          progressive: true,
+        }),
+      ],
+      pngquant: {
+        quality: "80-89",
+      },
+      gifsicle: {
+        interlaced: false,
+        optimizationLevel: 10,
+        colors: 256,
+      },
+      svgo: {},
+    }),
+    // webp生成
     new ImageminWebpWebpackPlugin({
       config: [
         {
@@ -66,6 +82,13 @@ module.exports = {
           },
         },
       ],
+    }),
+    new BrowserSyncPlugin({
+      host: "localhost",
+      port: 3000,
+      // proxy: "http://exmaple.local", // Local で使うと時にここをSite Domain に変更する
+      server: { baseDir: "dist" },
+      files: ["./dist/*.{html,css,js,jpg,png,webp,php}"],
     }),
   ],
   resolve: {
