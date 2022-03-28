@@ -3,7 +3,7 @@ const isDevelopment = process.env.NODE_ENV !== "production";
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: isDevelopment ? "development" : "production",
@@ -15,6 +15,7 @@ module.exports = {
     clean: true,
     path: path.resolve(__dirname, "dist/assets"),
     filename: "js/[name].js",
+    assetModuleFilename: "img/[name][ext][query]",
   },
   module: {
     rules: [
@@ -34,11 +35,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        exclude: /node_modules/,
-        generator: {
-          filename: `./image/[name].[contenthash][ext]`,
-        },
+        test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
         type: "asset/resource",
       },
     ],
@@ -52,11 +49,11 @@ module.exports = {
       server: { baseDir: "dist" },
       files: ["./dist/*.{html,css,js,jpg,png,webp,php}"],
     }),
-    new CopyWebpackPlugin({
+    new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, "src/assets", "img"),
-          to: path.resolve(__dirname, "dist/assets", "img"),
+          from: path.resolve(__dirname, "src/assets/img"),
+          to: path.resolve(__dirname, "dist/assets/img"),
         },
       ],
     }),
