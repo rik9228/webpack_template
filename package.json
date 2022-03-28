@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "del-cli dist/",
     "pug": "pug -P --out dist --basedir src --pretty src/*.pug",
-    "pug:w": "onchange 'src/**/*.pug' -- yarn run pug",
+    "pug:w": "onchange 'src/*.pug' -- yarn run pug",
     "watch": "webpack --watch",
     "webpack:d": "NODE_ENV=development webpack",
     "webpack:p": "NODE_ENV=production webpack",
