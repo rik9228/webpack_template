@@ -1,0 +1,43 @@
+head 
+	meta(charset="UTF-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	meta(name="viewport" content="width=device-width, initial-scale=1.0")
+	title=meta[page]['title']
+	meta(name="description" content=meta[page]['description'])
+	meta(name="keywords" content=meta[page]['keywords'])
+
+	block preload
+		//- ページ共通webフォントなどをpreload読み込む
+		//- 例
+		link(rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" crossorigin)
+		link(rel="preload" href="https://placehold.jp/640x300.png" as="image" media="(min-width: 768px)")
+		link(rel="preload" href="https://placehold.jp/640x300.png" as="image" media="(min-width: 768px)")
+
+	block css
+		link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3/dist/css/yakuhanjp_s.min.css")
+		link(rel="stylesheet" href="/assets/css/style.css")
+
+	link(rel="canonical" href=meta[page]['url'])
+
+	meta(name="format-detection" content="telephone=no")
+
+	meta(property="og:title" content=meta[page]['title'] + ' | ' + meta['name'])
+	meta(property="og:type" content=meta[page]['ogpType'])
+	meta(property="og:image" content=meta[page]['url'] + meta[page]['ogpImage'])
+	meta(property="og:url" content=meta[page]['url'])
+	meta(property="og:description" content=meta[page]['description'])
+	meta(property="og:site_name" content=meta[page]['title'])
+	meta(property="og:locale" content="ja")
+
+	if meta[page]['fbAppId']
+		meta(property="fb:app_id" content=meta[page]['fbAppId'])
+	else if meta[page]['fbAdmins']
+		meta(property="fb:admins" content=meta[page]['fbAdmins'])
+
+	if meta[page]['twitterCard']
+		meta(name="twitter:card" content=meta[page]['twitterCard'])
+	if meta[page]['twitterSite']
+		meta(name="twitter:site" content=meta[page]['twitterSite'])
+
+	script.
+		document.documentElement.classList.remove('no-js')
