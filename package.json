@@ -7,7 +7,7 @@
     "clean": "del-cli dist/",
     "pug": "pug -P --out dist --pretty ./src/*.pug",
     "pug:w": "onchange ./src/ -- yarn run pug",
-    "fix": "eslint ./src/**/*.{js,ts} --fix && prettier --write ./src/**/*.{pug,scss,js,ts}",
+    "fix": "eslint --fix ./src/assets/ts/* && prettier --write './src' '!src/img'",
     "webpack:d": "NODE_ENV=development webpack",
     "watch": "NODE_ENV=development webpack --watch",
     "webpack:p": "NODE_ENV=production webpack",
@@ -34,6 +34,7 @@
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-autofix": "^1.1.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.2.0",
@@ -63,10 +64,5 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
-  },
-  "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint ./src/**/*.{js,ts} --fix"
-    ]
   }
 }

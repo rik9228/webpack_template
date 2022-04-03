@@ -1,15 +1,18 @@
 module.exports = {
-    env: {
-        browser: true,
-        es2021: true,
-        node: true,
-    },
-    extends: ["standard", "prettier"],
-    parser: "@typescript-eslint/parser",
-    parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-    },
-    plugins: ["@typescript-eslint"],
-    rules: {},
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: ["standard", "prettier"],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint", "autofix"],
+  rules: {
+    "autofix/no-unused-vars": "error",
+    "autofix/no-plusplus": "error",
+  },
 };

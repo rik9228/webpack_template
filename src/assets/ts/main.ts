@@ -6,12 +6,9 @@ function requireAll(r: any) {
 requireAll(require.context("../img/icons/", true, /\.svg$/));
 
 const arr = [1, 2, 3];
-const hoge = "hoge";
-const hoge02 =      "hoge";
+const hoge =    "hoge";
+
 console.log(hoge);
-
-
-
 
 
 
