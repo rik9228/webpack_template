@@ -16,4 +16,9 @@ console.log(hoge);
 
 
 
+
+
+
+
+
 arr.forEach((elem) => console.log(elem));
