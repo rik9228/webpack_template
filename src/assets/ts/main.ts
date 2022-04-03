@@ -10,4 +10,10 @@ const hoge = "hoge";
 
 console.log(hoge);
 
+
+
+
+
+
+
 arr.forEach((elem) => console.log(elem));
