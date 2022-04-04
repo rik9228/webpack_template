@@ -47,7 +47,7 @@ module.exports = {
       port: 3000,
       // proxy: "http://exmaple.local", // Local で使うと時にここをSite Domain に変更する
       server: { baseDir: "dist" },
-      files: ["./dist/*.{html,css,js,jpg,png,webp,php}"],
+      files: ["./dist"],
     }),
   ],
   resolve: {
