@@ -6,16 +6,17 @@
   "scripts": {
     "copy": "node copy.mjs",
     "clean": "del-cli dist/",
-    "pug": "pug src/ --pretty --out dist/ src/ --watch",
+    "pug": "pug src/ --pretty --out dist/ src/",
+    "pug:w": "pug src/ --pretty --out dist/ src/ --watch",
     "img": "node imagemin.js",
     "img:w": "onchange src/assets/img/ -- node imagemin.js {{changed}}",
     "fix": "eslint --fix ./src/assets/ts/* && prettier --write './src' '!src/img'",
     "webpack:d": "NODE_ENV=development webpack",
     "watch": "NODE_ENV=development webpack --watch",
     "webpack:p": "NODE_ENV=production webpack",
-    "dev": "yarn clean && npm-run-all -p pug img img:w watch",
+    "dev": "yarn clean && npm-run-all -p pug:w img img:w watch",
     "dev:ex": "yarn clean && npm-run-all -p img img:w watch",
-    "build": "yarn clean && npm-run-all -p pug img fix webpack:p",
+    "build": "yarn clean && npm-run-all -s pug img fix webpack:p",
     "prepare": "husky install"
   },
   "devDependencies": {
