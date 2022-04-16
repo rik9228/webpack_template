@@ -1,0 +1,29 @@
+@use "../../global/mixin/mq" as *;
+
+.u-display-pc {
+  display: none;
+  @include mq-min(md) {
+    display: none !important;
+  }
+  @include mq-min(lg) {
+    display: block !important;
+  }
+}
+
+.u-display-tab {
+  display: none !important;
+  @include mq-min(md) {
+    display: block !important;
+  }
+
+  @include mq-min(lg) {
+    display: none !important;
+  }
+}
+
+.u-display-sp {
+  display: none !important;
+  @include mq-min(md) {
+    display: block !important;
+  }
+}

@@ -1,0 +1,7 @@
+@use "../../global/variable/breakpoints" as *;
+
+@function get-vw($size, $device: tab) {
+  $value: map-get($deviceWidth, $device); // breakpoint値
+  $rate: math.div(100, $value); // math/divで計算できる
+  @return $rate * $size * 1vw;
+}
