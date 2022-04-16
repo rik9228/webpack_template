@@ -2908,6 +2908,11 @@ destroy@~1.0.4:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
   integrity sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
 
+destyle.css@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/destyle.css/-/destyle.css-3.0.2.tgz#80c331db91f02337040b62dc534ab4f3dc075546"
+  integrity sha512-OUzuAlridP01YP0seHxx+FgwhdXF07Ls9NxnJpR8EI7ADioswoR7VKkBd/s1hNw/G4ILasLSA0k2Kw1M57r1kA==
+
 dev-ip@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/dev-ip/-/dev-ip-1.0.1.tgz#a76a3ed1855be7a012bb8ac16cb80f3c00dc28f0"

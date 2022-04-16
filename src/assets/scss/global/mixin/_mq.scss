@@ -1,0 +1,14 @@
+@use "sass:math";
+@use "@/scss/global/variable/breakpoints" as *;
+
+@mixin mq-min($breakpoint: md) {
+  @media #{map-get($breakpoints-min, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq-max($breakpoint: md) {
+  @media #{map-get($breakpoints-max, $breakpoint)} {
+    @content;
+  }
+}

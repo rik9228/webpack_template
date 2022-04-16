@@ -70,5 +70,8 @@
   "lint-staged": {
     "./src/**/*.{js,ts}": "eslint --fix",
     "./src/**/*.{js,ts,css,scss,md}": "prettier --write"
+  },
+  "dependencies": {
+    "destyle.css": "^3.0.2"
   }
 }

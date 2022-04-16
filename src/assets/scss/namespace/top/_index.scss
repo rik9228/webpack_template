@@ -1,0 +1,9 @@
+@use "../../global/mixin/full-width" as *;
+
+body {
+  @include full-width();
+}
+
+p {
+  font-size: get_vw(240, tab);
+}

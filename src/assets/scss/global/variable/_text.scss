@@ -1,0 +1,22 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+// ベースになるline-height
+$line-height: 1.75 !default;
+
+// システムフォント
+$font-family-sans-serif: YakuHanJPs, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$font-family-serif: "Hiragino Mincho ProN", "HG明朝E", Meiryo, serif !default;
+$font-family-monospace: Consolas, Menlo, Courier, monospace !default;
+$font-family-en: "Helvetica Neue", Helvetica, sans-serif !default;
+$font-family-zh-cn: YakuHanJPs, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$font-family-zh-tw: YakuHanJPs, "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
+
+// Noto Sans
+// GoogleやMicrosoftのCDNは中国ではブロックされてしまうので、
+// フォントファイルをサーバに置いて読み込む必要があります。
+$font-family-noto-sans-ja: YakuHanJPs, "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif !default;
+$font-family-noto-sans-en: "Noto Sans", "Helvetica Neue", Helvetica, sans-serif !default;
+$font-family-noto-sans-zh-cn: YakuHanJPs, "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif !default;
+$font-family-noto-sans-zh-tw: YakuHanJPs, "Noto Sans TC", "Microsoft JhengHei", "微軟正黑體", "PMingLiU" sans-serif !default;
