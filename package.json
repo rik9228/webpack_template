@@ -72,6 +72,7 @@
     "./src/**/*.{js,ts,css,scss,md}": "prettier --write"
   },
   "dependencies": {
-    "destyle.css": "^3.0.2"
+    "destyle.css": "^3.0.2",
+    "smooth-scroll": "^16.1.3"
   }
 }
