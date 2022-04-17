@@ -1,0 +1,14 @@
+{
+  "dest": "./dist/assets/img/svg",
+  "mode": {
+    "symbol": {
+      "dest": ".",
+      "sprite": "sprite.svg"
+    }
+  },
+  "shape": {
+    "id": {
+      "separator": ""
+    }
+  }
+}

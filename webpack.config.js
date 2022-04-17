@@ -2,7 +2,6 @@ const path = require("path");
 const isDevelopment = process.env.NODE_ENV !== "production";
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 
 module.exports = {
   mode: isDevelopment ? "development" : "production",
@@ -31,17 +30,10 @@ module.exports = {
         exclude: /node_modules/,
         use: [MiniCssExtractPlugin.loader, { loader: "css-loader", options: { url: false } }, "sass-loader"],
       },
-      {
-        test: /\.svg$/,
-        use: ["svg-sprite-loader", "svg-transform-loader", "svgo-loader"],
-      },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({ filename: "css/style.css" }),
-    new SpriteLoaderPlugin({
-      plainSprite: true,
-    }),
     new BrowserSyncPlugin({
       host: "localhost",
       port: 3000,

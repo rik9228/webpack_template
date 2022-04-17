@@ -10,6 +10,8 @@
     "noImplicitAny": false,
     "noUnusedLocals": false,
     "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "target": "es2020"
   },
   "compileOnSave": true,
