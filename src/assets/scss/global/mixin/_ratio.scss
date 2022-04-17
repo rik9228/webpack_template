@@ -1,0 +1,29 @@
+// padding-topで縦横日を調整する。
+// imgタグを囲むタグに使用する。
+
+// 例：
+// padding-top: 100%;   /* 1:1 */
+// padding-top: 75%;    /* 4:3 */
+// padding-top: 66.66%; /* 3:2 */
+// padding-top: 56.25%; /* 16:9 */
+// padding-top: 150%;   /* 2:3 */
+// padding-top: 200%;   /* 1:2 */
+
+// aspect-ratioはsafariが15.xからじゃないとサポートされていないので、これを使う。
+
+@mixin ratio($ratio: 100%) {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    padding-top: $ratio;
+    display: block;
+  }
+
+  & img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); //中央寄せトリミング
+  }
+}
