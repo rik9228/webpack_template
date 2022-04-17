@@ -23,8 +23,14 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+    "@babel/plugin-transform-async-to-generator": "^7.16.8",
+    "@babel/plugin-transform-regenerator": "^7.17.9",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
+    "@babel/runtime": "^7.17.9",
     "@prettier/plugin-pug": "^1.20.0",
     "@types/webpack-env": "^1.16.3",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
@@ -61,6 +67,7 @@
     "pug-cli": "github:pugjs/pug-cli#master",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
+    "svg-sprite": "^1.5.4",
     "svg-sprite-loader": "^6.0.11",
     "svg-transform-loader": "^2.0.13",
     "svgo-loader": "^3.0.0",
@@ -74,6 +81,7 @@
     "./src/**/*.{js,ts,css,scss,md}": "prettier --write"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "destyle.css": "^3.0.2",
     "smooth-scroll": "^16.1.3"
   }
